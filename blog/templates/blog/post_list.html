@@ -8,9 +8,11 @@
         </div>
         
         <div>
-            <p>Published: 12.12.2015</p>
-            <h2><a href="">My first post</a></h2>
-            <p> "All generalizations are false, including this one". -Mark Twain </p>
+            {% for post in posts %}
+                <p>Published: {{post.published_date}}</p>
+                <h1><a href="">{{post.title}}</a></h1>
+                <p>{{post.text|linebreaks}}</p>
+            {% endfor %}
         <div>    
     </body>
 </html>
